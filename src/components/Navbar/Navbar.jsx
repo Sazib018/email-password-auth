@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import auth from '../Firebase/firebase.utils';
+import toast from 'react-hot-toast';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
 
@@ -14,6 +17,10 @@ const Navbar = () => {
             <Link to={'/signUp'}> Sign Up</Link>
         </li>
     </>
+    const handleLogOut =()=>{
+        signOut(auth)
+        .then(result => toast.success('Log out Successfully'))
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -46,7 +53,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-primary">Sign Up</a>
+                <a onClick={handleLogOut} className="btn btn-primary">Log Out</a>
             </div>
         </div>
     );

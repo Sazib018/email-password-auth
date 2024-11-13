@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA8-7iR9-FZfbo4ZucVA8T903vxlhHYYuk",
-  authDomain: "email-pass-auth-d5afa.firebaseapp.com",
-  projectId: "email-pass-auth-d5afa",
-  storageBucket: "email-pass-auth-d5afa.firebasestorage.app",
-  messagingSenderId: "642821532335",
-  appId: "1:642821532335:web:7bca699c0c2aeec566025a"
+  apiKey: "AIzaSyDP6tGUs3lL9TTeznI_qiODn1aoqUgcDJs",
+  authDomain: "email-password-auth-8edb2.firebaseapp.com",
+  projectId: "email-password-auth-8edb2",
+  storageBucket: "email-password-auth-8edb2.firebasestorage.app",
+  messagingSenderId: "568347423753",
+  appId: "1:568347423753:web:9cf99ccf6e896a9c8474d8"
 };
 
 // Initialize Firebase

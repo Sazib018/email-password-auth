@@ -1,8 +1,8 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import auth from '../Firebase/firebase.config';
 import React, { useState } from 'react';
 import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
+import auth from '../Firebase/firebase.utils';
 
 const SignUp = () => {
 
