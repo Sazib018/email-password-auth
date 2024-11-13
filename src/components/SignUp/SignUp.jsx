@@ -14,16 +14,15 @@ const SignUp = () => {
     const handleSignUP = e => {
         e.preventDefault()
 
-
         setSignError('')
         setIsSuccess('')
-
+        
         const email = e.target.email.value;
         const password = e.target.password.value;
 
 
         if (password.length < 6) {
-            setSignError('password at least 6 characters longer')
+            setSignError('Password at least 6 characters longer')
             return
         }
         else if (!(/(?=.*[A-Z])/.test(password))) {
@@ -51,20 +50,12 @@ const SignUp = () => {
 
                     <div className='relative mb-6 w-full'>
                         <input
-                            className='px-4 py-2 w-full border-2 rounded-md pr-10' type={isShow ? "text" : "password"} name='password' placeholder='Password' required
-                        />
-                        <button
-                            className='absolute inset-y-0 right-3 flex items-center text-2xl' onClick={() => setIsShow(!isShow)}
-                            type="button"
-                        >
-                            {isShow ? <IoIosEye /> : <IoIosEyeOff />}
+                            className='px-4 py-2 w-full border-2 rounded-md pr-10' type={isShow ? "text" : "password"} name='password' placeholder='Password' required />
+                        <button className='absolute inset-y-0 right-3 flex items-center text-2xl' onClick={() => setIsShow(!isShow)}
+                            type="button" > {isShow ? <IoIosEye /> : <IoIosEyeOff />}
                         </button>
-                    </div>
-
-
-                    <br />
-
-                    <input className='px-4 py-2 mb-6 w-full btn btn-primary' type="submit" value="Sign Up" />
+                    </div> <br />
+                    <input className='px-8 py-2 mb-6  btn btn-primary text-white' type="submit" value="Sign Up" />
                 </form>
 
                 {

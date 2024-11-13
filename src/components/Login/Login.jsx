@@ -31,8 +31,8 @@ const Login = () => {
                                 type="password"
                             />
                         </div>
-                        <div>
-                            <button className="w-full bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded-lg">
+                        <div className='text-center'>
+                            <button className=" bg-purple-700 hover:bg-purple-900 text-white font-bold py-3 px-10 rounded-lg">
                                 Log In
                             </button>
                         </div>
