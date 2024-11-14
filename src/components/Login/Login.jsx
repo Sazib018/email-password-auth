@@ -1,7 +1,7 @@
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
-import toast from 'react-hot-toast';
 import auth from '../Firebase/firebase.utils';
+import toast from 'react-hot-toast';
 
 const Login = () => {
 
