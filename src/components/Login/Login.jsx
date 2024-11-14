@@ -1,9 +1,12 @@
-import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useState } from 'react';
+import { sendPasswordResetEmail} from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import auth from '../Firebase/firebase.utils';
 import toast from 'react-hot-toast';
+import { Context } from '../Providers/AuthContext';
 
 const Login = () => {
+
+    const { login } = useContext(Context)
 
     const [error, setError] = useState('');
     const [emailForgot, setEmailForgot] = useState('');
@@ -15,7 +18,7 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        signInWithEmailAndPassword(auth, email, password)
+        login(email, password)
             .then(result => {
                 console.log(result.user);
                 toast.success('Successfully Log In!')
