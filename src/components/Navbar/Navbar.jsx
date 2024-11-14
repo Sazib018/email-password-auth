@@ -14,13 +14,10 @@ const Navbar = () => {
             <Link to={'/login'}> Log In</Link>
         </li>
         <li>
-            <Link to={'/signUp'}> Sign Up</Link>
+            <Link to={'/logout'}> Sign Up</Link>
         </li>
     </>
-    const handleLogOut =()=>{
-        signOut(auth)
-        .then(result => toast.success('Log out Successfully'))
-    }
+   
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -53,7 +50,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a onClick={handleLogOut} className="btn btn-primary">Log Out</a>
+                <a  className="btn btn-primary">Log Out</a>
             </div>
         </div>
     );
