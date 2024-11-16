@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../Providers/AuthContext';
+import { signOut } from 'firebase/auth';
 import auth from '../Firebase/firebase.utils';
 import toast from 'react-hot-toast';
-import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+    const { user } = useContext(Context)
 
     const navList = <>
         <li>
@@ -16,8 +18,16 @@ const Navbar = () => {
         <li>
             <Link to={'/signUp'}> Sign Up</Link>
         </li>
+        <li>
+            <Link to={'/order'}> Order</Link>
+        </li>
     </>
-   
+
+    const handleLogOut = ()=>{
+        signOut(auth)
+        .then(result => toast.success('Log Out Success'))
+    }
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -46,11 +56,16 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                   {navList}
+                    {navList}
                 </ul>
             </div>
             <div className="navbar-end">
-                <a  className="btn btn-primary">Log Out</a>
+                {user ? <>
+                    <h1>{user.email}</h1>
+                    <button onClick={handleLogOut} className="btn btn-primary">Log out</button>
+                </> :
+                    <Link to={'/login'} className="btn btn-primary">Login</Link>
+                }
             </div>
         </div>
     );

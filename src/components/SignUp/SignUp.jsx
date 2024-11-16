@@ -7,7 +7,7 @@ import { Context } from '../Providers/AuthContext';
 
 const SignUp = () => {
 
-    const {} = useContext(Context)
+    const {registration} = useContext(Context)
 
     const [signError, setSignError] = useState('')
     const [isSuccess, setIsSuccess] = useState('')
@@ -33,11 +33,11 @@ const SignUp = () => {
             return
         }
 
-        registration (auth, email, password)
+        registration (email, password)
             .then(result => {
                 console.log(result.user);
-                /* setIsSuccess('Account Create Successfully.')
-                navigate('/login') */
+                setIsSuccess('Account Create Successfully.')
+                navigate('/login')
                 toast.setIsSuccess('Account Create Successfully')
             })
             .catch(err => setSignError(err.message))
